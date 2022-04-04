@@ -15,6 +15,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AngularFireModule } from '@angular/fire/compat';
 
 import { TestComponent } from './test/test.component';
+import { SignUpComponent } from './login/sign-up/sign-up.component';
+import { DialogPwResetComponent } from './login/dialog-pw-reset/dialog-pw-reset.component';
+import { DialogAnonymComponent } from './login/dialog-anonym/dialog-anonym.component';
+
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
 
 
 
@@ -23,7 +31,10 @@ import { TestComponent } from './test/test.component';
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    TestComponent
+    TestComponent,
+    SignUpComponent,
+    DialogPwResetComponent,
+    DialogAnonymComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +49,12 @@ import { TestComponent } from './test/test.component';
     provideStorage(() => getStorage()),
     AngularFirestoreModule,
     BrowserAnimationsModule,
+    MatCardModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatIconModule,
+    
 
 
   ],

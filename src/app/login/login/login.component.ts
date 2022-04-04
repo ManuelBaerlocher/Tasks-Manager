@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import firebase from 'firebase/compat/app';
+import {FormControl, Validators} from '@angular/forms';
 
 
 @Component({
@@ -12,6 +13,8 @@ import firebase from 'firebase/compat/app';
 })
 export class LoginComponent implements OnInit {
   test = []
+  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+  hide = true;
 
   constructor(public auth: AngularFireAuth, private router: Router) { }
 
@@ -34,11 +37,11 @@ export class LoginComponent implements OnInit {
 
   anoymous() {
     this.auth.signInAnonymously().then((result: any) => {
-      
+
       this.test = result
 
       console.log('anoymous', this.test)
-      
+
       this.router.navigate([''])
 
     });
